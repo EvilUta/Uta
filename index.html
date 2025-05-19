@@ -383,16 +383,6 @@
       toggleButton.textContent = '🌙';
     }
   });
-
-  // Redireciona ao clicar em qualquer lugar do body
-  document.body.addEventListener('click', function (e) {
-    // Evita que clique em links ou no botão de modo
-    if (
-      e.target.tagName.toLowerCase() === 'a' ||
-      e.target.id === 'modeToggle'
-    ) return;
-    window.location.href = 'https://www.marketingdigital.com'; // Troque pelo link desejado
-  });
 </script>
 </body>
 </html>
