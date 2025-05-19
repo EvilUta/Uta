@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+.btn {
+  text-decoration: none; /* remove o sublinhado */
+  color: white;
+  background-color: black;
+  padding: 12px 24px;
+  border-radius: 24px;
+  display: inline-block;
+  font-size: 16px;
+}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: white;
+      color: #2D2D2D;
+      padding-top: 90px;
+      padding-bottom: 120px;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Modo escuro */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    /* Menu fixo superior igual ao primeiro código */
+    header.navbar {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      padding: 27px 47px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode header.navbar {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      flex-wrap: wrap;
+    }
+
+    /* Remove o sublinhado e o efeito azul no foco */
+    .nav-links a {
+      font-size: 19px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:focus-visible {
+      outline: none;
+      /* opcional: adicionar box-shadow para acessibilidade */
+      /* box-shadow: 0 0 0 3px #ff6600; */
+    }
+
+    .logo {
+      font-size: 22.5px;
+      font-weight: 600;
+    }
+
+    /* Botão do toggle de modo */
+    .mode-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+    }
+    .mode-toggle:hover {
+      transform: scale(1.2);
+    }
+
+    /* Container e seções */
+    .container {
+      max-width: 1440px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    section.main-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .text-block {
+      flex: 1 1 360px;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 54px;
+    }
+
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 27px;
+    }
+
+    .sub-heading {
+      font-size: 22.5px;
+      font-weight: 600;
+    }
+
+    h1.main-heading,
+    h2.main-heading {
+      font-size: 76.5px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .description {
+      font-size: 19px;
+      line-height: 30px;
+    }
+
+    .btn {
+      width: 238px;
+      height: 89px;
+      background: black;
+      color: white;
+      font-size: 27.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .btn {
+      background: #ccc;
+      color: #121212;
+    }
+
+    .btn:hover {
+      background: #333;
+      transform: scale(1.03);
+    }
+
+    body.dark-mode .btn:hover {
+      background: #aaa;
+    }
+
+    .extra-text {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    body.dark-mode .extra-text {
+      color: #ccc;
+    }
+
+    .side-image {
+      flex: 1 1 360px;
+      max-width: 540px;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    section.center-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .center-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .center-text .sub-heading {
+      font-size: 22.5px;
+      font-weight: 600;
+    }
+
+    .center-text h2.main-heading {
+      font-size: 50px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .center-text .description {
+      font-size: 18px;
+      line-height: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer.footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      background-color: #f2f2f2;
+      padding: 20px 40px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode footer.footer {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    body.dark-mode .footer-content {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      h1.main-heading,
+      h2.main-heading {
+        font-size: 42px;
+      }
+
+      .side-image {
+        max-width: 100%;
+      }
+
+      section.main-section {
+        padding: 40px 0;
+      }
+    }
+
+    img {
+      border-radius: 15px;
+    }
+  </style>
+</head>
+</head>
+<body>
+ <header class="navbar">
+    <div class="logo">Marketing Digital</div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+       <a href="trabalho.html">Trabalho</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
+  </header>
+
+  <main class="container">
+    <!-- Primeira seção -->
+    <section class="main-section">
+      <div class="text-block">
+        <div class="text-group">
+          <div class="sub-heading">Branding | Image making</div>
+          <h1 class="main-heading">Designer Visual</h1>
+          <div class="description">
+            Esse é um teste de template usando o figma.<br />
+            Uma tentativa de acerto e erro
+          </div>
+        </div>
+        <a href="contato.html" class="btn">Contato</a>
+        <div class="extra-text">
+          O marketing digital é uma estratégia fundamental para qualquer negócio que deseja crescer na era online.
+          conseguem alcançar seu público-alvo com maior precisão e eficácia. Além disso, o marketing digital permite
+          mensurar resultados em tempo real, possibilitando ajustes rápidos para otimizar campanhas. Investir em
+          conteúdo relevante, interação com o cliente e análise de dados são pilares essenciais para construir uma
+          presença digital forte e duradoura.
+        </div>
+      </div>
+      <img
+        class="side-image"
+        src="https://img.freepik.com/fotos-gratis/colagem-de-mao-psicodelica_23-2149303465.jpg?semt=ais_hybrid&w=740"
+        alt="Visual Example"
+      />
+    </section>
+
+    <!-- Segunda seção -->
+    <section class="main-section">
+      <img
+        class="side-image"
+        src="https://imgv3.fotor.com/images/share/Fotor-free-online-photo-editor-pt.png"
+        alt="Segunda imagem"
+      />
+      <div class="text-block">
+        <div class="text-group">
+          <div class="sub-heading">Campanhas criativas</div>
+          <h2 class="main-heading">Impacto Visual</h2>
+          <div class="description">
+            Criamos campanhas que chamam atenção e conectam com o público. Nosso objetivo é combinar estética com funcionalidade para gerar resultados.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção central -->
+    <section class="center-section">
+      <img
+        class="center-image"
+        src="https://s2-techtudo.glbimg.com/LhSL6boLw4ESCjKZwGJ4iLM1SR0=/0x0:6000x4000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/m/t/SyEBW1TmALTnnEclAvOQ/notebook-banco-de-imagens.jpg"
+        alt="Imagem Central"
+      />
+      <div class="center-text">
+        <div class="sub-heading">Conexão Visual</div>
+        <h2 class="main-heading">Criatividade em cada pixel</h2>
+        <div class="description">
+          Nós combinamos design, estratégia e impacto visual para transformar ideias em experiências marcantes.
+        </div>
+      </div>
+      <a href="conexao.html" class="btn">Conectar</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>Central de Ajuda</span>
+      <span>Políticas</span>
+      <span>Redes Sociais</span>
+      <span>Atendimento</span>
+    </div>
+  </footer>
+
+  <script>
+  const toggleButton = document.getElementById('modeToggle');
+  const body = document.body;
+
+  toggleButton.addEventListener('click', (e) => {
+    e.stopPropagation(); // Impede o clique de subir para o body
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      toggleButton.textContent = '☀️';
+    } else {
+      toggleButton.textContent = '🌙';
+    }
+  });
+
+  // Redireciona ao clicar em qualquer lugar do body
+  document.body.addEventListener('click', function (e) {
+    // Evita que clique em links ou no botão de modo
+    if (
+      e.target.tagName.toLowerCase() === 'a' ||
+      e.target.id === 'modeToggle'
+    ) return;
+    window.location.href = 'https://www.marketingdigital.com'; // Troque pelo link desejado
+  });
+</script>
+</body>
+</html>
+
