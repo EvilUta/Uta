@@ -70,7 +70,6 @@
       font-weight: 600;
     }
 
-    /* Botão toggle modo */
     .mode-toggle {
       font-size: 24px;
       cursor: pointer;
@@ -81,6 +80,7 @@
       transition: transform 0.3s ease;
       margin-left: 10px;
     }
+
     .mode-toggle:hover {
       transform: scale(1.2);
     }
@@ -101,6 +101,96 @@
       font-size: 18px;
       line-height: 1.6;
       margin-bottom: 20px;
+    }
+
+    .form-section {
+      margin-top: 60px;
+    }
+
+    .form-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: 600;
+    }
+
+    form input,
+    form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Epilogue', sans-serif;
+      transition: border 0.3s;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: #000000;
+    }
+
+    form button {
+      background-color: #000000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #333333;
+    }
+
+    /* Progress bar */
+    .progress-container {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #000000;
+      transition: width 0.3s ease;
+    }
+
+    /* Dark mode */
+    body.dark-mode form button {
+      background-color: #ffffff;
+      color:  #000000;
+    }
+
+    body.dark-mode form input,
+    body.dark-mode form textarea {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      border-color: #444;
+    }
+
+    body.dark-mode form input:focus,
+    body.dark-mode form textarea:focus {
+      border-color: #81c784;
+    }
+
+    body.dark-mode .progress-container {
+      background-color: #333;
     }
 
     footer.footer {
@@ -146,16 +236,14 @@
     }
   </style>
 </head>
-<body>
-</head>
-</head>
+
 <body>
   <header class="navbar">
     <div class="logo">Marketing Digital</div>
     <nav class="nav-links">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
-       <a href="trabalho.html">Trabalho</a>
+      <a href="trabalho.html">Trabalho</a>
       <a href="contato.html">Contato</a>
     </nav>
     <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
@@ -165,18 +253,35 @@
     <h1>Contato</h1>
     <div class="content">
       <p>📞 Telefone/WhatsApp: (11) 91234-5678.</p>
-
       <p>📧 E-mail: contato@agenciavertixdigital.com.</p>
-
       <p>📍 Endereço: Rua das Conexões, 123 – Sala 5, São Paulo/SP</p>
-
       <p>🕒 Atendimento: Segunda a Sexta, das 9h às 18h</p>
-
-       <p>Ou preencha o formulário abaixo e nossa equipe entrará em contato com você o mais rápido possível.</p>  
-
-      <p>Vamos juntos impulsionar sua presença digital!.</p>
-
+      <p>Ou preencha o formulário abaixo e nossa equipe entrará em contato com você o mais rápido possível.</p>  
+      <p>Vamos juntos impulsionar sua presença digital!</p>
     </div>
+
+    <hr style="margin: 60px 0;">
+
+    <section class="form-section">
+      <h2>Formulário de Contato</h2>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <form id="formulario">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
   </main>
 
   <footer class="footer">
@@ -195,13 +300,10 @@
     toggleButton.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
 
-      // Atualiza o ícone
-      if (body.classList.contains('dark-mode')) {
-        toggleButton.textContent = '☀️';
-      } else {
-        toggleButton.textContent = '🌙';
-      }
+      toggleButton.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
     });
   </script>
 </body>
+</html>
+
 </html>
