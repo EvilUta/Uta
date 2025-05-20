@@ -1,20 +1,13 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Site de marketing digital com foco em branding, campanhas criativas e impacto visual." />
   <title>Marketing Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-.btn {
-  text-decoration: none; /* remove o sublinhado */
-  color: white;
-  background-color: black;
-  padding: 12px 24px;
-  border-radius: 24px;
-  display: inline-block;
-  font-size: 16px;
-}
+    /* Reset básico */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -37,7 +30,7 @@
       color: #e0e0e0;
     }
 
-    /* Menu fixo superior igual ao primeiro código */
+    /* Menu fixo superior */
     header.navbar {
       position: fixed;
       top: 0;
@@ -67,7 +60,6 @@
       flex-wrap: wrap;
     }
 
-    /* Remove o sublinhado e o efeito azul no foco */
     .nav-links a {
       font-size: 19px;
       cursor: pointer;
@@ -79,8 +71,6 @@
 
     .nav-links a:focus-visible {
       outline: none;
-      /* opcional: adicionar box-shadow para acessibilidade */
-      /* box-shadow: 0 0 0 3px #ff6600; */
     }
 
     .logo {
@@ -88,7 +78,7 @@
       font-weight: 600;
     }
 
-    /* Botão do toggle de modo */
+    /* Botão toggle modo */
     .mode-toggle {
       font-size: 24px;
       cursor: pointer;
@@ -98,11 +88,12 @@
       color: inherit;
       transition: transform 0.3s ease;
     }
+
     .mode-toggle:hover {
       transform: scale(1.2);
     }
 
-    /* Container e seções */
+    /* Container principal */
     .container {
       max-width: 1440px;
       margin: auto;
@@ -137,11 +128,16 @@
       font-weight: 600;
     }
 
-    h1.main-heading,
-    h2.main-heading {
+    h1.main-heading {
       font-size: 76.5px;
       font-weight: 600;
       line-height: 1.1;
+    }
+
+    h2.main-heading {
+      font-size: 50px;
+      font-weight: 600;
+      line-height: 1.2;
     }
 
     .description {
@@ -162,6 +158,7 @@
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     body.dark-mode .btn {
@@ -182,13 +179,14 @@
       margin-top: 20px;
       font-size: 18px;
       line-height: 1.5;
-      color: #444;
+      color: #333;
     }
 
     body.dark-mode .extra-text {
       color: #ccc;
     }
 
+    /* Ajuste para imagens padrão */
     .side-image {
       flex: 1 1 360px;
       max-width: 540px;
@@ -197,6 +195,59 @@
       border-radius: 15px;
     }
 
+    /* Carrossel */
+    .carousel {
+      position: relative;
+      flex: 1 1 360px;
+      max-width: 540px;
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 15px;
+      user-select: none;
+    }
+
+    /* Botões de navegação */
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px 15px;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    .carousel-button:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .carousel-button.prev {
+      left: 15px;
+    }
+
+    .carousel-button.next {
+      right: 15px;
+    }
+
+    /* Seção central */
     section.center-section {
       display: flex;
       flex-direction: column;
@@ -260,6 +311,12 @@
       color: #444;
     }
 
+    .footer-content a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
     body.dark-mode .footer-content {
       color: #ccc;
     }
@@ -270,35 +327,44 @@
         font-size: 42px;
       }
 
-      .side-image {
-        max-width: 100%;
-      }
-
+      /* Ajusta as seções para coluna */
       section.main-section {
+        flex-direction: column;
         padding: 40px 0;
       }
+
+      /* O carrossel e o texto ocupam 100% */
+      .carousel,
+      .text-block {
+        max-width: 100%;
+      }
     }
 
-    img {
-      border-radius: 15px;
-    }
   </style>
 </head>
-</head>
 <body>
- <header class="navbar">
+  <header class="navbar">
     <div class="logo">Marketing Digital</div>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Navegação principal">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
-       <a href="trabalho.html">Trabalho</a>
+      <a href="trabalho.html">Trabalho</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
+    <button
+      class="mode-toggle"
+      id="modeToggle"
+      aria-label="Alternar entre modo claro e escuro"
+      title="Alternar entre modo claro e escuro"
+      role="switch"
+      aria-checked="false"
+    >
+      🌙
+    </button>
   </header>
 
   <main class="container">
-    <!-- Primeira seção -->
+    <!-- Primeira seção com carrossel -->
     <section class="main-section">
       <div class="text-block">
         <div class="text-group">
@@ -312,17 +378,23 @@
         <a href="contato.html" class="btn">Contato</a>
         <div class="extra-text">
           O marketing digital é uma estratégia fundamental para qualquer negócio que deseja crescer na era online.
-          conseguem alcançar seu público-alvo com maior precisão e eficácia. Além disso, o marketing digital permite
+          Conseguem alcançar seu público-alvo com maior precisão e eficácia. Além disso, o marketing digital permite
           mensurar resultados em tempo real, possibilitando ajustes rápidos para otimizar campanhas. Investir em
           conteúdo relevante, interação com o cliente e análise de dados são pilares essenciais para construir uma
           presença digital forte e duradoura.
         </div>
       </div>
-      <img
-        class="side-image"
-        src="https://img.freepik.com/fotos-gratis/colagem-de-mao-psicodelica_23-2149303465.jpg?semt=ais_hybrid&w=740"
-        alt="Visual Example"
-      />
+
+      <!-- Carrossel de imagens -->
+      <div class="carousel" aria-label="Carrossel de imagens">
+        <div class="carousel-images" id="carouselImages">
+          <img src="https://img.freepik.com/fotos-gratis/colagem-de-mao-psicodelica_23-2149303465.jpg?semt=ais_hybrid&w=740" alt="Colagem psicodélica representando criatividade no design visual" />
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=540&q=80" alt="Imagem abstrata representando criatividade digital" />
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=540&q=80" alt="Mesa com computador e elementos de design gráfico" />
+        </div>
+        <button class="carousel-button prev" aria-label="Imagem anterior" id="prevBtn">&#10094;</button>
+        <button class="carousel-button next" aria-label="Próxima imagem" id="nextBtn">&#10095;</button>
+      </div>
     </section>
 
     <!-- Segunda seção -->
@@ -330,7 +402,7 @@
       <img
         class="side-image"
         src="https://imgv3.fotor.com/images/share/Fotor-free-online-photo-editor-pt.png"
-        alt="Segunda imagem"
+        alt="Imagem exemplo de edição visual online"
       />
       <div class="text-block">
         <div class="text-group">
@@ -348,7 +420,7 @@
       <img
         class="center-image"
         src="https://s2-techtudo.glbimg.com/LhSL6boLw4ESCjKZwGJ4iLM1SR0=/0x0:6000x4000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/m/t/SyEBW1TmALTnnEclAvOQ/notebook-banco-de-imagens.jpg"
-        alt="Imagem Central"
+        alt="Notebook representando tecnologia e conexão no marketing digital"
       />
       <div class="center-text">
         <div class="sub-heading">Conexão Visual</div>
@@ -361,43 +433,67 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <span>Central de Ajuda</span>
-      <span>Políticas</span>
-      <span>Redes Sociais</span>
-      <span>Atendimento</span>
-    </div>
+  <footer class="footer" role="contentinfo">
+    <nav class="footer-content" aria-label="Links do rodapé">
+      <a href="#">Central de Ajuda</a>
+      <a href="#">Políticas</a>
+      <a href="#">Redes Sociais</a>
+      <a href="#">Atendimento</a>
+    </nav>
   </footer>
 
- <script>
-  const toggleButton = document.getElementById('modeToggle');
-  const body = document.body;
+  <script>
+    // Toggle modo claro/escuro
+    const toggleButton = document.getElementById('modeToggle');
+    toggleButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      toggleButton.setAttribute('aria-checked', isDark);
+      toggleButton.textContent = isDark ? '☀️' : '🌙';
+    });
 
-  // Função para aplicar o modo salvo
-  function aplicarModoSalvo() {
-    const modoSalvo = localStorage.getItem('modo');
+    // Carrossel
+    const carouselImages = document.getElementById('carouselImages');
+    const images = carouselImages.querySelectorAll('img');
+    const totalImages = images.length;
+    let currentIndex = 0;
 
-    if (modoSalvo === 'escuro') {
-      body.classList.add('dark-mode');
-      toggleButton.textContent = '☀️';
-    } else {
-      body.classList.remove('dark-mode');
-      toggleButton.textContent = '🌙';
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      carouselImages.style.transform = `translateX(${offset}%)`;
     }
-  }
 
-  // Aplicar modo salvo ao carregar a página
-  aplicarModoSalvo();
+    function showNext() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      updateCarousel();
+    }
 
-  // Alternar o modo e salvar no localStorage
-  toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
-    localStorage.setItem('modo', modoAtual);
-    toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
-  });
-</script>
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', () => {
+      showNext();
+      resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      showPrev();
+      resetAutoSlide();
+    });
+
+    // Auto slide a cada 4 segundos
+    let autoSlideInterval = setInterval(showNext, 4000);
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(showNext, 4000);
+    }
+  </script>
 </body>
 </html>
+
 
