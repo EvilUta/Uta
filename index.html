@@ -492,34 +492,6 @@
       clearInterval(autoSlideInterval);
       autoSlideInterval = setInterval(showNext, 4000);
     }
-  <script>
-  const toggleButton = document.getElementById('modeToggle');
-  const body = document.body;
-
-  // Função para aplicar o modo salvo
-  function aplicarModoSalvo() {
-    const modoSalvo = localStorage.getItem('modo');
-
-    if (modoSalvo === 'escuro') {
-      body.classList.add('dark-mode');
-      toggleButton.textContent = '☀️';
-    } else {
-      body.classList.remove('dark-mode');
-      toggleButton.textContent = '🌙';
-    }
-  }
-
-  // Aplicar modo salvo ao carregar a página
-  aplicarModoSalvo();
-
-  // Alternar o modo e salvar no localStorage
-  toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
-    localStorage.setItem('modo', modoAtual);
-    toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
-  });
-</script>
   </script>
 </body>
 </html>
