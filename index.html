@@ -1,12 +1,25 @@
 !DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <script>
+  // Aplica dark mode antes da página carregar
+  (function() {
+    const isDark = localStorage.getItem('darkMode') === 'true';
+    if (isDark) {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Site de marketing digital com foco em branding, campanhas criativas e impacto visual." />
   <title>Marketing Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
+    <style>
+  html.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+  }
     /* Reset básico */
     * {
       box-sizing: border-box;
@@ -492,6 +505,32 @@
       clearInterval(autoSlideInterval);
       autoSlideInterval = setInterval(showNext, 4000);
     }
+  const toggleButton = document.getElementById('modeToggle');
+  const body = document.body;
+
+  // Função para aplicar o modo salvo
+  function aplicarModoSalvo() {
+    const modoSalvo = localStorage.getItem('modo');
+
+    if (modoSalvo === 'escuro') {
+      body.classList.add('dark-mode');
+      toggleButton.textContent = '☀️';
+    } else {
+      body.classList.remove('dark-mode');
+      toggleButton.textContent = '🌙';
+    }
+  }
+
+  // Aplicar modo salvo ao carregar a página
+  aplicarModoSalvo();
+
+  // Alternar o modo e salvar no localStorage
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
+    localStorage.setItem('modo', modoAtual);
+    toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
+  });
   </script>
 </body>
 </html>
