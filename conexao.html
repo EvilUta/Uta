@@ -5,7 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marketing Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
+  </video>
+</section>
+
   <style>
+.video-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.video-section video {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Modo escuro */
+body.dark-mode .video-section video {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.benefits-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.benefits-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: inherit;
+}
+
+.benefits-section ul {
+  list-style: none; /* Remove as bolinhas */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.benefits-section li {
+  background-color: #f9f9f9;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  width: 240px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefits-section li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Modo escuro */
+body.dark-mode .benefits-section li {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .benefits-section li:hover {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+
+
+body.dark-mode .benefits-section li::before {
+  color: #aaa;
+}
+
+
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -210,6 +293,29 @@
         </p>
       </div>
     </div>
+<section class="benefits-section">
+  <h2>Benefícios do Marketing Digital</h2>
+  <ul>
+    <li>Alcance global com baixo investimento</li>
+    <li>Segmentação precisa de público</li>
+    <li>Mensuração em tempo real</li>
+    <li>Fortalecimento da marca</li>
+    <li>Relacionamento direto com clientes</li>
+  </ul>
+<section class="benefits-section">
+  <!-- benefícios aqui -->
+</section>
+<section class="video-section">
+  <h2>Assista ao vídeo sobre Marketing Digital</h2>
+  <iframe
+    width="720"
+    height="405"
+    src="https://www.youtube.com/embed/Ae_bQPnJOGo"
+    title="Vídeo sobre Marketing Digital"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</section>
   </main>
 
   <footer class="footer">
@@ -221,7 +327,7 @@
     </div>
   </footer>
 
- <script>
+  <script>
   const toggleButton = document.getElementById('modeToggle');
   const body = document.body;
 
@@ -249,5 +355,6 @@
     toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
   });
 </script>
+
 </body>
 </html>
