@@ -7,6 +7,12 @@
   <title>Marketing Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    .footer-content a {
+  color: inherit;       /* usa a cor do texto normal */
+  text-decoration: none; /* remove o sublinhado */
+  cursor: pointer;       /* muda o cursor para indicar que é clicável */
+  transition: color 0.3s ease;
+}
     /* Reset básico */
     * {
       box-sizing: border-box;
@@ -433,14 +439,14 @@
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <nav class="footer-content" aria-label="Links do rodapé">
-      <a href="#">Central de Ajuda</a>
-      <a href="#">Políticas</a>
-      <a href="#">Redes Sociais</a>
-      <a href="#">Atendimento</a>
-    </nav>
-  </footer>
+  <footer class="footer">
+  <div class="footer-content">
+    <a href="centralAjuda.html">Central de Ajuda</a>
+    <span>Políticas</span>
+    <span>Redes Sociais</span>
+    <span>Atendimento</span>
+  </div>
+</footer>
 
   <script>
 
