@@ -6,6 +6,13 @@
   <title>Marketing Digital</title>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    .footer-content a {
+  color: inherit;       /* usa a cor do texto normal */
+  text-decoration: none; /* remove o sublinhado */
+  cursor: pointer;       /* muda o cursor para indicar que é clicável */
+  transition: color 0.3s ease;
+}
+
 .team-carousel {
   margin-top: 60px;
   max-width: 960px;
@@ -300,15 +307,15 @@ body.dark-mode .slide p {
 
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <span>Central de Ajuda</span>
-      <span>Políticas</span>
-      <span>Redes Sociais</span>
-      <span>Atendimento</span>
-    </div>
-  </footer>
-
+ <footer class="footer">
+  <div class="footer-content">
+    <a href="centralAjuda.html">Central de Ajuda</a>
+    <span>Políticas</span>
+    <span>Redes Sociais</span>
+    <span>Atendimento</span>
+  </div>
+</footer>
+  
   <script>
   const toggleButton = document.getElementById('modeToggle');
   const body = document.body;
