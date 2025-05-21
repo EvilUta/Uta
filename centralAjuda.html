@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: white;
+      color: #000000;
+      padding-top: 90px;
+      padding-bottom: 120px;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      padding: 27px 47px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode header.navbar {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 19px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    .logo {
+      font-size: 22.5px;
+      font-weight: 600;
+    }
+
+    .mode-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .mode-toggle:hover {
+      transform: scale(1.2);
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+      line-height: 1.6;
+      color: #000000; /* cor padrão para o texto no modo claro */
+    }
+
+    body.dark-mode main {
+      color: #ffffff; /* texto branco no modo escuro */
+    }
+
+    main h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+
+    .help-question-box {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .help-question-box label {
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 10px;
+      color: inherit;
+    }
+
+    .help-question-box textarea {
+      width: 100%;
+      height: 120px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+      background-color: white;
+      color: black;
+    }
+
+    .help-question-box textarea:focus {
+      border-color: #000000;
+      outline: none;
+    }
+
+    body.dark-mode .help-question-box textarea {
+      background-color: #2a2a2a;
+      color: #ffffff;
+      border-color: #555;
+    }
+
+    body.dark-mode .help-question-box textarea:focus {
+      border-color: #ffffff;
+    }
+
+    .help-question-box button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #000000; /* preto no modo claro */
+      color: #ffffff; /* texto branco no modo claro */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .help-question-box button:hover {
+      background-color: #222222;
+    }
+
+    body.dark-mode .help-question-box button {
+      background-color: #ffffff; /* branco no modo escuro */
+      color: #000000; /* texto preto no modo escuro */
+    }
+
+    body.dark-mode .help-question-box button:hover {
+      background-color: #dddddd;
+    }
+
+    footer.footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      background-color: #f2f2f2;
+      padding: 20px 40px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode footer.footer {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    body.dark-mode .footer-content {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Marketing Digital</div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="trabalho.html">Trabalho</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
+  </header>
+
+  <main>
+    <div>
+      <h1>Central de ajuda</h1>
+      <p>
+        Seja bem-vindo à nossa central de ajuda! Aqui, você encontrará respostas detalhadas para as perguntas mais frequentes sobre nossos serviços, processos e suporte. Nosso objetivo é fornecer um atendimento claro e eficiente, garantindo que você tenha todas as informações necessárias para aproveitar ao máximo o que oferecemos. 
+        Caso não encontre o que procura, não hesite em entrar em contato com nossa equipe de atendimento, que está sempre pronta para ajudar com rapidez e cordialidade.
+        Navegue pelos tópicos abaixo para saber mais, ou utilize o campo de busca para localizar assuntos específicos. Agradecemos sua visita e esperamos poder tornar sua experiência a melhor possível!
+      </p>
+    </div>
+    <div>
+      <h1>Contato para melhor atendimento</h1>
+      <p>📞 Telefone/WhatsApp: (11) 91234-5678.</p>
+    </div>
+
+    <div class="help-question-box">
+      <label for="userQuestion">Faça sua pergunta:</label>
+      <textarea id="userQuestion" placeholder="Digite sua dúvida aqui..."></textarea>
+      <button type="button">Enviar Pergunta</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>Central de ajuda</span>
+      <span>Políticas</span>
+      <span>Redes Sociais</span>
+      <span>Atendimento</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('modeToggle');
+    const body = document.body;
+
+    function aplicarModoSalvo() {
+      const modoSalvo = localStorage.getItem('modo');
+      if (modoSalvo === 'escuro') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️';
+      } else {
+        body.classList.remove('dark-mode');
+        toggleButton.textContent = '🌙';
+      }
+    }
+
+    aplicarModoSalvo();
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
+      localStorage.setItem('modo', modoAtual);
+      toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
+    });
+const enviarBtn = document.querySelector('.help-question-box button');
+const perguntaInput = document.getElementById('userQuestion');
+
+enviarBtn.addEventListener('click', () => {
+  const pergunta = perguntaInput.value.trim();
+  if (!pergunta) {
+    alert('Por favor, digite sua pergunta antes de enviar.');
+    return;
+  }
+  alert('Pergunta enviada com sucesso!\n\nSua dúvida: ' + pergunta);
+  perguntaInput.value = '';
+});
+  </script>
+</body>
+</html>
