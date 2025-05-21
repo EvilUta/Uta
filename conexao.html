@@ -9,6 +9,12 @@
 </section>
 
   <style>
+    .footer-content a {
+  color: inherit;       /* usa a cor do texto normal */
+  text-decoration: none; /* remove o sublinhado */
+  cursor: pointer;       /* muda o cursor para indicar que é clicável */
+  transition: color 0.3s ease;
+}
 .video-section {
   margin-top: 60px;
   text-align: center;
@@ -319,13 +325,14 @@ body.dark-mode .benefits-section li::before {
   </main>
 
   <footer class="footer">
-    <div class="footer-content">
-      <span>Central de Ajuda</span>
-      <span>Políticas</span>
-      <span>Redes Sociais</span>
-      <span>Atendimento</span>
-    </div>
-  </footer>
+  <div class="footer-content">
+    <a href="centralAjuda.html">Central de Ajuda</a>
+    <span>Políticas</span>
+    <span>Redes Sociais</span>
+    <span>Atendimento</span>
+  </div>
+</footer>
+
 
   <script>
   const toggleButton = document.getElementById('modeToggle');
