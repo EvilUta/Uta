@@ -293,7 +293,7 @@
     </div>
   </footer>
 
- <script>
+  <script>
   const toggleButton = document.getElementById('modeToggle');
   const body = document.body;
 
@@ -320,8 +320,70 @@
     localStorage.setItem('modo', modoAtual);
     toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
   });
-</script>
-</body>
-</html>
+const form = document.getElementById('formulario');
+const progressBar = document.getElementById('progress-bar');
 
+function validarEmail(email) {
+  // Regex básico para validar email
+  const re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+function atualizarProgressBar() {
+  const nome = form.nome.value.trim();
+  const email = form.email.value.trim();
+  const mensagem = form.mensagem.value.trim();
+
+  let preenchidos = 0;
+  if (nome) preenchidos++;
+  if (email && validarEmail(email)) preenchidos++;
+  if (mensagem) preenchidos++;
+
+  // Atualiza barra de progresso em %
+  progressBar.style.width = ((preenchidos / 3) * 100) + '%';
+}
+
+form.addEventListener('input', atualizarProgressBar);
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Evita envio padrão
+
+  const nome = form.nome.value.trim();
+  const email = form.email.value.trim();
+  const mensagem = form.mensagem.value.trim();
+
+  if (!nome) {
+    alert('Por favor, preencha o nome.');
+    form.nome.focus();
+    return;
+  }
+
+  if (!email) {
+    alert('Por favor, preencha o e-mail.');
+    form.email.focus();
+    return;
+  }
+
+  if (!validarEmail(email)) {
+    alert('Por favor, insira um e-mail válido.');
+    form.email.focus();
+    return;
+  }
+
+  if (!mensagem) {
+    alert('Por favor, preencha a mensagem.');
+    form.mensagem.focus();
+    return;
+  }
+
+  // Se chegou aqui, tudo válido
+  alert('Formulário enviado com sucesso! Obrigado pelo contato.');
+
+  form.reset();
+  progressBar.style.width = '0%';
+});
+
+</script>
+
+</body>
 </html>
