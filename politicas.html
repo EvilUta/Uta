@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+    /* (seu CSS inteiro permanece igual) */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: white;
+      color: #000000;
+      padding-top: 90px;
+      padding-bottom: 120px;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    header.navbar {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      padding: 27px 47px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode header.navbar {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 19px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+    .logo {
+      font-size: 22.5px;
+      font-weight: 600;
+    }
+    .mode-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+    }
+    .mode-toggle:hover {
+      transform: scale(1.2);
+    }
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+      line-height: 1.6;
+      color: #000000;
+    }
+    body.dark-mode main {
+      color: #ffffff;
+    }
+    footer.footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      background-color: #f2f2f2;
+      padding: 20px 40px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode footer.footer {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 16px;
+      color: #444;
+    }
+    body.dark-mode .footer-content {
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Marketing Digital</div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="trabalho.html">Trabalho</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
+  </header>
+
+ <main>
+  <h1>Políticas</h1>
+  <p>
+    Bem-vindo à nossa página de Políticas! Nesta seção, você encontrará informações detalhadas sobre como tratamos seus dados, nossas responsabilidades e os seus direitos como usuário dos nossos serviços de marketing digital. Prezamos pela transparência, segurança e compromisso com nossos clientes e visitantes.
+  </p>
+  <p>
+    <strong>1. Privacidade e Proteção de Dados:</strong><br />
+    Nós valorizamos a sua privacidade. Todos os dados pessoais coletados, como nome, e-mail, telefone e informações comerciais, são utilizados exclusivamente para fins de comunicação, prestação de serviços e melhorias na sua experiência conosco. As suas informações jamais serão vendidas, compartilhadas ou divulgadas sem seu consentimento, exceto quando exigido por lei.
+  </p>
+  <p>
+    <strong>2. Cookies e Tecnologias de Rastreamento:</strong><br />
+    Utilizamos cookies para melhorar a navegação, entender o comportamento dos visitantes e oferecer conteúdos personalizados. Você pode optar por desativar os cookies nas configurações do seu navegador, mas isso pode limitar algumas funcionalidades do site.
+  </p>
+  <p>
+    <strong>3. Condições de Uso:</strong><br />
+    Ao acessar nosso site, você concorda em utilizá-lo apenas para fins lícitos, não infringindo direitos, nem restringindo ou inibindo o uso de terceiros. Todo o conteúdo disponibilizado, como textos, imagens, vídeos e materiais, é protegido por direitos autorais e não pode ser copiado, distribuído ou utilizado sem autorização.
+  </p>
+  <p>
+    <strong>4. Alterações nas Políticas:</strong><br />
+    Podemos atualizar esta política periodicamente. Recomendamos que você revise esta página sempre que acessar nosso site, para estar ciente de qualquer mudança.
+  </p>
+  <p>
+    <strong>5. Contato:</strong><br />
+    Caso tenha dúvidas sobre nossas políticas ou queira exercer algum dos seus direitos, entre em contato pelo nosso e-mail: atendimento@marketingdigital.com ou pelo WhatsApp (11) 91234-5678.
+  </p>
+  <p>
+    Agradecemos pela confiança e por fazer parte da nossa comunidade!
+  </p>
+</main>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="centralAjuda.html">Central de Ajuda</a>
+      <span>Políticas</span>
+      <span>Redes Sociais</span>
+      <span>Atendimento</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('modeToggle');
+    const body = document.body;
+
+    function aplicarModoSalvo() {
+      const modoSalvo = localStorage.getItem('modo');
+      if (modoSalvo === 'escuro') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️';
+      } else {
+        body.classList.remove('dark-mode');
+        toggleButton.textContent = '🌙';
+      }
+    }
+
+    aplicarModoSalvo();
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
+      localStorage.setItem('modo', modoAtual);
+      toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
