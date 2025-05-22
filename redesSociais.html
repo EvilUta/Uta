@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.social-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.social-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.social-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.social-card p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.social-card a {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.social-card a:hover {
+  background-color: #222222;
+}
+
+/* Dark mode */
+body.dark-mode .social-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .social-card p {
+  color: #ccc;
+}
+
+body.dark-mode .social-card a {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode .social-card a:hover {
+  background-color: #dddddd;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+    /* (seu CSS inteiro permanece igual) */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: white;
+      color: #000000;
+      padding-top: 90px;
+      padding-bottom: 120px;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    header.navbar {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      padding: 27px 47px;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode header.navbar {
+      background: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 19px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+    .logo {
+      font-size: 22.5px;
+      font-weight: 600;
+    }
+    .mode-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+    }
+    .mode-toggle:hover {
+      transform: scale(1.2);
+    }
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+      line-height: 1.6;
+      color: #000000;
+    }
+    body.dark-mode main {
+      color: #ffffff;
+    }
+    footer.footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1440px;
+      background-color: #f2f2f2;
+      padding: 20px 40px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    body.dark-mode footer.footer {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.1);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-size: 16px;
+      color: #444;
+    }
+    body.dark-mode .footer-content {
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Marketing Digital</div>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="trabalho.html">Trabalho</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="mode-toggle" id="modeToggle" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
+  </header>
+
+<main>
+  <h1>Redes Sociais</h1>
+  <p>Conecte-se conosco nas principais plataformas! Estamos sempre disponíveis para tirar dúvidas, oferecer suporte e compartilhar conteúdos exclusivos.</p>
+
+  <div class="social-container">
+    <div class="social-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
+      <h2>Instagram</h2>
+      <p>@marketing_digital</p>
+      <a href="https://www.instagram.com/" target="_blank">Acessar</a>
+    </div>
+
+    <div class="social-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+      <h2>Facebook</h2>
+      <p>/marketingdigital</p>
+      <a href="https://www.facebook.com/" target="_blank">Acessar</a>
+    </div>
+
+    <div class="social-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+      <h2>WhatsApp</h2>
+      <p>(11) 91234-5678</p>
+      <a href="https://wa.me/5511912345678" target="_blank">Conversar</a>
+    </div>
+  </div>
+</main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="centralAjuda.html">Central de Ajuda</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="redesSociais.html">Redes Sociais</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('modeToggle');
+    const body = document.body;
+
+    function aplicarModoSalvo() {
+      const modoSalvo = localStorage.getItem('modo');
+      if (modoSalvo === 'escuro') {
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️';
+      } else {
+        body.classList.remove('dark-mode');
+        toggleButton.textContent = '🌙';
+      }
+    }
+
+    aplicarModoSalvo();
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
+      localStorage.setItem('modo', modoAtual);
+      toggleButton.textContent = modoAtual === 'escuro' ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
